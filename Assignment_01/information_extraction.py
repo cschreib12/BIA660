@@ -299,6 +299,7 @@ def answer_question(question=' '):
             if like_person in person.likes:
                 print(person.name, 'likes ', like_person.name)
 
+    else:
         print("I don't know.")
 
 
