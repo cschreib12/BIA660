@@ -293,6 +293,13 @@ def answer_question(question=' '):
             print(person.name, 'likes ', liked_person.name)
         else:
             print(person.name, 'does not like ', liked_person.name)
+    elif q_trip.subject.lower() == 'who' and q_trip.predicate == 'likes' and q_trip.object in [e.text for e in doc.ents if e.label_ == 'PERSON']:
+        like_person = select_person(q_trip.object)
+        for person in persons:
+            if like_person in person.likes:
+                print(person.name, 'likes ', like_person.name)
+
+        print("I don't know.")
 
 
 
